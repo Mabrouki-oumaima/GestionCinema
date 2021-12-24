@@ -5,9 +5,7 @@ import com.company.Interfaces.IFilm;
 import com.company.ConnexionBD;
 
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
 
 public class FilmControlleur extends ConnexionBD implements IFilm {
         public Connection con ;
@@ -21,7 +19,7 @@ public class FilmControlleur extends ConnexionBD implements IFilm {
     public boolean AjouterFilm(Film F) throws SQLException {
         boolean Resultat = true ;
 
-             String Insert ="INSERT INTO film (titre,nomrealisateur,anneerealisation,description" ;
+             String Insert ="INSERT INTO film (titre,nomrealisateur,anneerealisation,description) values (?,?,?,?)" ;
         PreparedStatement PS =con.prepareStatement(Insert);
        try {
            PS.setString(1,F.getTitre());
@@ -62,7 +60,40 @@ public class FilmControlleur extends ConnexionBD implements IFilm {
     }
 
     @Override
-    public boolean ModifierFilm(String titre) {
-        return false;
+    public boolean ModifierFilm(Film F) {
+        boolean resultat = true;
+        String modifier="UPDATE film SET nomrealisateur=?,anneerealisation=?,description=? WHERE titre=?";
+        try{
+            PreparedStatement PS = con.prepareStatement(modifier);
+            PS.setString(1,F.getNomRealisateur());
+            PS.setString(2,F.getAnneeRealisation());
+            PS.setString(3,F.getDescription());
+            PS.setString(4,F.getTitre());
+            int row = PS.executeUpdate();
+              if(row>0){
+                  System.out.println("Mise a jour réussie");
+              }
+        }catch (Exception E){
+            System.out.println(E.getMessage());
+            resultat=false;
+        }
+        return resultat ;
+
+    }
+
+    @Override
+    public void TousLesFilms() {
+        String GetFilm="Select * from film";
+        try{
+            // j'ai utilisé Statement ici car Select est Static et on utilise Statement pour les requetes Static
+            Statement S = con.createStatement();
+            ResultSet RS = S.executeQuery(GetFilm);
+            // on va parcourir par ligne notre resultat .next
+            while(RS.next()){
+                //TODO: Completer cette Fonction
+            }
+        }catch (Exception E){
+            System.out.println(E.getMessage());
+        }
     }
 }
