@@ -6,15 +6,12 @@ import com.company.ConnexionBD;
 
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class FilmControlleur extends ConnexionBD implements IFilm {
-        public Connection con ;
 
-    @Override
-    public void Connect(Connection con) {
-        super.Connect(con);
-    }
-
+    Connection con = Connect();
     @Override
     public boolean AjouterFilm(Film F) throws SQLException {
         boolean Resultat = true ;
@@ -58,7 +55,6 @@ public class FilmControlleur extends ConnexionBD implements IFilm {
         }
         return Resultat;
     }
-
     @Override
     public boolean ModifierFilm(Film F) {
         boolean resultat = true;
@@ -82,18 +78,43 @@ public class FilmControlleur extends ConnexionBD implements IFilm {
     }
 
     @Override
-    public void TousLesFilms() {
+    public List<Film> TousLesFilms() {
         String GetFilm="Select * from film";
+        List<Film> LsFilm = new ArrayList<>();
         try{
             // j'ai utilisé Statement ici car Select est Static et on utilise Statement pour les requetes Static
             Statement S = con.createStatement();
             ResultSet RS = S.executeQuery(GetFilm);
             // on va parcourir par ligne notre resultat .next
             while(RS.next()){
-                //TODO: Completer cette Fonction
+                Film F = new Film();
+                F.setDescription(RS.getString(4));
+                F.setTitre(RS.getString(1));
+                F.setNomRealisateur(RS.getString(2));
+                F.setAnneeRealisation(RS.getString(3));
+                LsFilm.add(F);
             }
         }catch (Exception E){
             System.out.println(E.getMessage());
+        }
+        return LsFilm;
+    }
+
+    @Override
+    public Film RechercherFilm(String titre) throws SQLException {
+        String GetFilm = "select * from film where film='" + titre + '"';
+        Statement S = con.createStatement();
+        ResultSet RS = S.executeQuery(GetFilm);
+        if (RS.next() == false) {
+            System.out.println("Film Introuvable");
+            return null;
+        } else {
+            Film F = new Film();
+            F.setDescription(RS.getString(4));
+            F.setTitre(RS.getString(1));
+            F.setNomRealisateur(RS.getString(2));
+            F.setAnneeRealisation(RS.getString(3));
+            return F ;
         }
     }
 }
