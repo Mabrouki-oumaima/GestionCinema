@@ -102,7 +102,7 @@ public class FilmControlleur extends ConnexionBD implements IFilm {
 
     @Override
     public Film RechercherFilm(String titre) throws SQLException {
-        String GetFilm = "select * from film where film='" + titre + '"';
+        String GetFilm = "select * from film where film='" + titre + "'";
         Statement S = con.createStatement();
         ResultSet RS = S.executeQuery(GetFilm);
         if (RS.next() == false) {

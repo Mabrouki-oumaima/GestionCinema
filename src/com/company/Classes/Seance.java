@@ -15,7 +15,7 @@ public class Seance extends Film {
     Salle Salle ;
     Tarif tarif;
 
-    public Tarif getTarif() {
+    public String getTarif() {
         return tarif;
     }
 
