@@ -3,10 +3,20 @@ package com.company.Classes;
 public class Salle {
     Integer NumeroSalle;
     Integer NbrPlaces ;
+    boolean Statut ;
 
-    public Salle(Integer numeroSalle, Integer nbrPlaces) {
+    public boolean isStatut() {
+        return Statut;
+    }
+
+    public void setStatut(boolean statut) {
+        Statut = statut;
+    }
+
+    public Salle(Integer numeroSalle, Integer nbrPlaces, boolean statut) {
         NumeroSalle = numeroSalle;
         NbrPlaces = nbrPlaces;
+        Statut = statut;
     }
 
     public Salle() {

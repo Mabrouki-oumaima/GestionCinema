@@ -1,12 +1,34 @@
 package com.company.Classes;
 
 
+
 public class Seance extends Film {
 
+    enum Tarif{
+        Normal,
+        reduit,
+        Gratuit
+    }
+    Integer NumSeance;
     Film Film;
     String DateHeure ;
     Salle Salle ;
+    Tarif tarif;
 
+    public Tarif getTarif() {
+        return tarif;
+    }
+
+    public void setTarif(Tarif tarif) {
+        this.tarif = tarif;
+    }
+    public Integer getNumSeance() {
+        return NumSeance;
+    }
+
+    public void setNumSeance(Integer numSeance) {
+        NumSeance = numSeance;
+    }
     public Film getFilm() {
         return Film;
     }

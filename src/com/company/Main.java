@@ -11,7 +11,7 @@ public class Main extends ConnexionBD {
 
     public static void main(String[] args) throws SQLException {
 
-        Film F = new Film();
+        /*Film F = new Film();
         Film F2 = new Film();
         FilmControlleur FC = new FilmControlleur();
         List<Film> L = new ArrayList<>();
@@ -31,7 +31,7 @@ public class Main extends ConnexionBD {
             System.out.println("NomRealisateur"+L.get(i).getNomRealisateur());
         }
 
-
+*/
 
     }
 }
