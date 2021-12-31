@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="482.0" prefWidth="668.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gestioncinema2.InscriptionController">
+   <children>
+      <TextField fx:id="cin" layoutX="170.0" layoutY="77.0" prefHeight="42.0" prefWidth="372.0" />
+      <Label layoutX="66.0" layoutY="90.0" text="CIN" />
+      <Label layoutX="40.0" layoutY="207.0" text="Mot de passe" />
+      <TextField fx:id="password" layoutX="170.0" layoutY="194.0" prefHeight="42.0" prefWidth="372.0" />
+      <TextField fx:id="confirm" layoutX="170.0" layoutY="304.0" prefHeight="42.0" prefWidth="372.0" />
+      <Label layoutX="23.0" layoutY="317.0" text="Confirmer Mot de passe" />
+      <Button layoutX="437.0" layoutY="403.0" mnemonicParsing="false" onAction="#Inscription" prefHeight="42.0" prefWidth="105.0" text="Inscrire" />
+   </children>
+</Pane>

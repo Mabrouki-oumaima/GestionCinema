@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="465.0" prefWidth="675.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gestioncinema2.HelloController">
+   <children>
+      <TextField fx:id="CIN" layoutX="300.0" layoutY="84.0" prefHeight="33.0" prefWidth="235.0" />
+      <TextField fx:id="Password" layoutX="300.0" layoutY="148.0" prefHeight="33.0" prefWidth="235.0" />
+      <Button layoutX="392.0" layoutY="244.0" mnemonicParsing="false" onAction="#Log" prefHeight="25.0" prefWidth="74.0" text="Entrer" />
+      <Button fx:id="SignIn" layoutX="75.0" layoutY="123.0" mnemonicParsing="false" onAction="#SignIn" prefHeight="25.0" prefWidth="74.0" text="Sign  up" />
+   </children>
+</Pane>
