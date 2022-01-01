@@ -9,4 +9,7 @@ module com.example.gestioncinema2 {
 
     opens com.example.gestioncinema2 to javafx.fxml;
     exports com.example.gestioncinema2;
+    exports com.example.gestioncinema2.Classes;
+
+
 }

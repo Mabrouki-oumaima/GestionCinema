@@ -22,13 +22,15 @@ public class PersonneControlleur extends ConnexionBD implements IPersonne {
             System.out.println("Utilisateur Non trouvé");
             Result = false;
         }else {
-            if(HashPassword(P.getPassword())==RS.getString(3)){
-                System.out.println("Utilisateur Trouvé");
+            System.out.println("**********Verification des mots de passe************");
+            if(HashPassword(P.getPassword()).equals(RS.getString(3))){
+                System.out.println("Verification Reussite");
                 Result = true ;
             }else {
-                System.out.println("Mot de passe erroné");
+                System.out.println("Verification Echouée");
                 Result=false;
             }
+            System.out.println("**********Operation Terminée************");
         }
         return Result ;
     }

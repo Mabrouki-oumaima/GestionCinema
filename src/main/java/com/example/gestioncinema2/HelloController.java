@@ -42,7 +42,7 @@ public class HelloController {
             try {
                 P.setCIN(this.CIN.getText());
                 P.setPassword(this.Password.getText());
-                if (PC.Login(P)) {
+                if (PC.Login(P)==true) {
                     Alert alert = new Alert(Alert.AlertType.INFORMATION);
                     alert.setTitle("Information ");
                     alert.setHeaderText(null);

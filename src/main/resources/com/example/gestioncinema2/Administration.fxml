@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="440.0" prefWidth="619.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gestioncinema2.AdministrationController">
+   <children>
+      <TabPane layoutX="-4.0" layoutY="-5.0" prefHeight="446.0" prefWidth="625.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab fx:id="TabGestionFilms" onSelectionChanged="#LoadData" text="Getion Films">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="TabViewFilm" layoutX="4.0" layoutY="-1.0" prefHeight="372.0" prefWidth="619.0">
+                          <columns>
+                              <TableColumn fx:id="TitreC" prefWidth="75.0" text="Titre" />
+                            <TableColumn fx:id="NomRealisateurC" prefWidth="135.0" text="NomRealisateur" />
+                            <TableColumn fx:id="AnneeC" prefWidth="95.0" text="Année" />
+                              <TableColumn fx:id="DescriptionS" prefWidth="313.0" text="Description" />
+                          </columns>
+                        </TableView>
+                        <Button layoutX="59.0" layoutY="378.0" mnemonicParsing="false" onAction="#AjouterB" prefHeight="25.0" prefWidth="74.0" text="Ajouter" />
+                        <Button layoutX="287.0" layoutY="378.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="76.0" text="Modifier" />
+                        <Button fx:id="Supp" layoutX="499.0" layoutY="378.0" mnemonicParsing="false" onAction="#Delete" prefHeight="25.0" prefWidth="80.0" text="Supprimer" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Gestion Personnes">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+            </content>
+          </Tab>
+            <Tab text="Gestion des Salles">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              </content>
+            </Tab>
+            <Tab text="Gestion Seances">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</Pane>

@@ -51,7 +51,7 @@ public class FilmControlleur extends ConnexionBD implements IFilm {
                 System.out.println("Film Supprimé");
             }
         } catch (SQLException SE) {
-            System.out.println(SE.getMessage());
+            System.out.println(SE.getErrorCode());
                     Resultat = false;
         }
         return Resultat;
@@ -94,6 +94,7 @@ public class FilmControlleur extends ConnexionBD implements IFilm {
                 F.setNomRealisateur(RS.getString(2));
                 F.setAnneeRealisation(RS.getString(3));
                 LsFilm.add(F);
+                System.out.println("Film ");
             }
         }catch (Exception E){
             System.out.println(E.getMessage());
@@ -111,10 +112,10 @@ public class FilmControlleur extends ConnexionBD implements IFilm {
             return null;
         } else {
             Film F = new Film();
-            F.setDescription(RS.getString(4));
-            F.setTitre(RS.getString(1));
-            F.setNomRealisateur(RS.getString(2));
-            F.setAnneeRealisation(RS.getString(3));
+            F.setDescription(RS.getString("description"));
+            F.setTitre(RS.getString("titre"));
+            F.setNomRealisateur(RS.getString("nomrealisateur"));
+            F.setAnneeRealisation(RS.getString("anneerealisation"));
             return F ;
         }
     }
